@@ -1,36 +1,30 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
-import { Loader2 } from "lucide-react";
+import { ReactNode } from "react";
 
 interface ProtectedRouteProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const { user, userRole, loading } = useAuth();
-  const navigate = useNavigate();
+export default function ProtectedRoute({ children }: ProtectedRouteProps) {
+  const { user, loading } = useAuth();
 
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate("/auth", { replace: true });
-    }
-  }, [user, loading, navigate]);
-
+  // Auth ainda está carregando
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-        <span className="ml-2 text-muted-foreground">Verificando acesso...</span>
+      <div className="flex min-h-screen items-center justify-center">
+        <span className="text-muted-foreground text-sm">
+          Verificando autenticação…
+        </span>
       </div>
     );
   }
 
+  // Não autenticado → vai para login
   if (!user) {
-    return null;
+    return <Navigate to="/auth" replace />;
   }
 
+  // Autenticado → renderiza a rota
   return <>{children}</>;
-};
-
-export default ProtectedRoute;
+}
