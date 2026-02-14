@@ -16,13 +16,6 @@ front/.vite/
 front/.env
 
 # ===============================
-# BACKEND (Node / Express)
-# ===============================
-backend/node_modules/
-backend/dist/
-backend/.env
-
-# ===============================
 # DATABASE / CONFIG
 # ===============================
 .env
