@@ -5,23 +5,23 @@ const API_URL = "https://actkdback-production.up.railway.app";
 export async function createStudent(
   student: Omit<Student, "id" | "createdAt" | "updatedAt">
 ) {
-  const response = await fetch(API_URL, {
+  const response = await fetch(`${API_URL}/students`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
       name: student.name,
-      mother_name: student.motherName,
-      father_name: student.fatherName,
+      motherName: student.motherName,
+      fatherName: student.fatherName,
       age: student.age, 
       belt: student.belt,
-      blood_type: student.bloodType,
+      bloodType: student.bloodType,
       phone: student.phone,
       observations: student.observations,
       address: student.address,
-      enrollment_date: student.enrollmentDate,
-      monthly_fee: student.monthlyFee,
+      enrollmentDate: student.enrollmentDate,
+      monthlyFee: student.monthlyFee,
     }),
   });
 
