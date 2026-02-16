@@ -47,13 +47,13 @@ export const useStudents = () => {
         age: student.age,
         belt: student.belt,
         phone: student.phone,
-        mother_name: student.motherName,
-        father_name: student.fatherName,
-        blood_type: student.bloodType,
+        mother_name: student.mother_name,
+        father_name: student.father_name,
+        blood_type: student.blood_type,
         address: student.address,
         observations: student.observations,
-        enrollment_date: student.enrollmentDate,
-        monthly_fee: student.monthlyFee,
+        enrollment_date: student.enrollment_date,
+        monthly_fee: student.monthly_fee,
       };
 
       console.log("POST /students payload:", payload);
