@@ -41,12 +41,19 @@ export const useStudents = () => {
     student: Omit<Student, "id" | "createdAt" | "updatedAt">
   ) => {
     try {
-      // Enviar apenas os campos que o backend espera
+      // Enviando para o back oque ele espera
       const payload = {
         name: student.name,
         age: student.age,
         belt: student.belt,
         phone: student.phone,
+        mother_name: student.motherName,
+        father_name: student.fatherName,
+        blood_type: student.bloodType,
+        address: student.address,
+        observations: student.observations,
+        enrollment_date: student.enrollmentDate,
+        monthly_fee: student.monthlyFee,
       };
 
       console.log("POST /students payload:", payload);

@@ -1,18 +1,23 @@
 export interface Student {
-  id: string;
+  id?: string;
+
   name: string;
-  motherName: string;
-  fatherName: string;
   age: number;
-  belt: string;
-  bloodType: string;
-  phone: string;
-  observations: string;
-  address: string;
-  enrollmentDate: string;
-  monthlyFee: number;
-  createdAt?: string;
-  updatedAt?: string;
+  belt: BeltLevel;
+
+  motherName?: string | null;
+  fatherName?: string | null;
+
+  bloodType?: BloodType |  null;
+  phone?: string | null;
+  address?: string | null;
+  observations?: string | null;
+
+  enrollmentDate: string | null;
+  monthlyFee: number | null;
+
+  createAt?: string;
+  updateAT?: string;
 }
 
 export type BeltLevel = 
