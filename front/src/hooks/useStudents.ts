@@ -40,6 +40,7 @@ export const useStudents = () => {
   const addStudent = async (
   student: Omit<Student, "id" | "createdAt" | "updatedAt">
   ) => {
+    console.log("✅Student recebido no addStudent:", student)
     try {
       // Enviando para o back oque ele espera
       const payload = {
