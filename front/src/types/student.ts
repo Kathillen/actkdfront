@@ -5,19 +5,19 @@ export interface Student {
   age: number;
   belt: BeltLevel;
 
-  mother_name?: string | null;
-  father_name?: string | null;
+  motherName?: string | null;
+  fatherName?: string | null;
 
-  blood_type?: BloodType |  null;
+  bloodType?: BloodType |  null;
   phone?: string | null;
   address?: string | null;
   observations?: string | null;
 
-  enrollment_date: string | null;
-  monthly_fee: number | null;
+  enrollmentDate: string | null;
+  monthlyFee: number | null;
 
-  create_at?: string;
-  update_at?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export type BeltLevel = 
