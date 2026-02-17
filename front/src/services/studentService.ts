@@ -12,16 +12,16 @@ export async function createStudent(
     },
     body: JSON.stringify({
       name: student.name,
-      mother_name: student.mother_name,
-      father_name: student.father_name,
+      mother_name: student.motherName,
+      father_name: student.fatherName,
       age: student.age, 
       belt: student.belt,
-      blood_type: student.blood_type,
+      blood_type: student.bloodType,
       phone: student.phone,
       observations: student.observations,
       address: student.address,
-      enrollment_date: student.enrollment_date,
-      monthly_fee: student.monthly_fee,
+      enrollment_date: student.enrollmentDate,
+      monthly_fee: student.monthlyFee,
     }),
   });
 

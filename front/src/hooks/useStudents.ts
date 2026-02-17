@@ -55,9 +55,8 @@ export const useStudents = () => {
         enrollmentDate: student.enrollmentDate,
         monthlyFee: student.monthlyFee,
 };
-
-
-      console.log("POST /students payload:", payload);
+  console.log("📁 STUDENT:", student);
+  console.log("📁 PAYLOAD:", payload);
 
       const res = await fetch(`${API_URL}/students`, {
         method: "POST",
