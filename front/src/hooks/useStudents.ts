@@ -11,6 +11,8 @@ export const useStudents = () => {
   const { toast } = useToast();
 
   // 🔹 GET /students
+  console.log("👍API_URL:", API_URL);
+  
   const fetchStudents = async () => {
     try {
       setLoading(true);
