@@ -11,8 +11,7 @@ export const useStudents = () => {
   const { toast } = useToast();
 
   // 🔹 GET /students
-  console.log("👍API_URL:", API_URL);
-  
+
   const fetchStudents = async () => {
     try {
       setLoading(true);
@@ -106,6 +105,7 @@ export const useStudents = () => {
       if (!res.ok) {
         const text = await res.text();
         throw new Error(text || "Erro ao atualizar aluno");
+        
       }
 
       const updated = await res.json();
